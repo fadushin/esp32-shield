@@ -19,7 +19,7 @@ U 1 1 618301E4
 P 8550 3600
 F 0 "J1" H 8600 4125 50  0000 C CNN
 F 1 "Conn_02x09_Odd_Even" H 8600 4126 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x09_P2.54mm_Vertical" H 8550 3600 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x09_P2.54mm_Vertical" H 8550 3600 50  0001 C CNN
 F 3 "~" H 8550 3600 50  0001 C CNN
 	1    8550 3600
 	1    0    0    -1  
@@ -30,7 +30,7 @@ U 1 1 61831057
 P 9750 3600
 F 0 "J2" H 9800 4125 50  0000 C CNN
 F 1 "Conn_02x09_Odd_Even" H 9800 4126 50  0001 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x09_P2.54mm_Vertical" H 9750 3600 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x09_P2.54mm_Vertical" H 9750 3600 50  0001 C CNN
 F 3 "~" H 9750 3600 50  0001 C CNN
 	1    9750 3600
 	1    0    0    -1  
@@ -67,10 +67,10 @@ Text Label 10200 3600 0    50   ~ 0
 IO19
 Text Label 9350 3600 0    50   ~ 0
 IO21
-Text Label 9350 3800 0    50   ~ 0
-RXD
-Text Label 9350 3900 0    50   ~ 0
-TXD
+Text Label 9250 3800 0    50   ~ 0
+ESP-RX
+Text Label 9250 3900 0    50   ~ 0
+ESP-TX
 Text Label 10200 3700 0    50   ~ 0
 IO22
 Text Label 10200 3800 0    50   ~ 0
@@ -88,17 +88,11 @@ Wire Wire Line
 Wire Wire Line
 	10050 3300 10200 3300
 Wire Wire Line
-	9350 3900 9550 3900
-Wire Wire Line
-	9350 3800 9550 3800
-Wire Wire Line
 	9350 3300 9550 3300
 Wire Wire Line
 	9350 3200 9550 3200
 Wire Wire Line
 	10050 3500 10200 3500
-Text Label 9350 3700 0    50   ~ 0
-GND
 Wire Wire Line
 	9350 3700 9550 3700
 Text Label 9350 4000 0    50   ~ 0
@@ -186,9 +180,9 @@ L Regulator_Linear:AMS1117 U1
 U 1 1 618F3A93
 P 5750 3100
 F 0 "U1" H 5750 3342 50  0000 C CNN
-F 1 "AMS1117" H 5750 3251 50  0000 C CNN
+F 1 "AZ1117" H 5750 3251 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 5750 3300 50  0001 C CNN
-F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 5850 2850 50  0001 C CNN
+F 3 "https://www.mouser.com/datasheet/2/115/DIOD_S_A0001413888_1-2541960.pdf" H 5850 2850 50  0001 C CNN
 	1    5750 3100
 	1    0    0    -1  
 $EndComp
@@ -214,30 +208,8 @@ F 3 "~" H 1950 3350 50  0001 C CNN
 	1    1950 3350
 	1    0    0    -1  
 $EndComp
-$Comp
-L Transistor_BJT:S8050 Q1
-U 1 1 618F6485
-P 3950 5900
-F 0 "Q1" H 4140 5946 50  0000 L CNN
-F 1 "S8050" H 4140 5855 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 5825 50  0001 L CIN
-F 3 "http://www.unisonic.com.tw/datasheet/S8050.pdf" H 3950 5900 50  0001 L CNN
-	1    3950 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:S8050 Q2
-U 1 1 618F721F
-P 3950 6650
-F 0 "Q2" H 4140 6696 50  0000 L CNN
-F 1 "S8050" H 4140 6605 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4150 6575 50  0001 L CIN
-F 3 "http://www.unisonic.com.tw/datasheet/S8050.pdf" H 3950 6650 50  0001 L CNN
-	1    3950 6650
-	1    0    0    -1  
-$EndComp
-Text Label 1500 3050 0    50   ~ 0
-+5v
+Text Label 1250 3050 0    50   ~ 0
++5v-in
 Text Label 1500 3250 0    50   ~ 0
 GND
 Text Label 1500 3150 0    50   ~ 0
@@ -252,8 +224,6 @@ Text Label 1500 3650 0    50   ~ 0
 #SU
 Text Label 1500 3750 0    50   ~ 0
 SU
-Wire Wire Line
-	1500 3050 1750 3050
 Wire Wire Line
 	1500 3150 1750 3150
 Wire Wire Line
@@ -282,10 +252,10 @@ Text Label 2750 3250 0    50   ~ 0
 DTR
 Text Label 2750 3350 0    50   ~ 0
 DSR
-Text Label 2750 3450 0    50   ~ 0
-TXD
-Text Label 2750 3550 0    50   ~ 0
-RXD
+Text Label 2750 3550 2    50   ~ 0
+ESP-TX
+Text Label 2750 3450 2    50   ~ 0
+ESP-RX
 Text Label 2750 3650 0    50   ~ 0
 RTS
 Text Label 2750 3750 0    50   ~ 0
@@ -313,60 +283,27 @@ NoConn ~ 2750 3750
 Text Label 5450 4800 0    50   ~ 0
 GND
 Text Label 4900 2900 0    50   ~ 0
-+5v
++5v-out
 Text Label 6550 2850 0    50   ~ 0
 VDD
-$Comp
-L Device:R R1
-U 1 1 6192FE31
-P 2800 5900
-F 0 "R1" V 2593 5900 50  0000 C CNN
-F 1 "10k" V 2684 5900 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 2730 5900 50  0001 C CNN
-F 3 "~" H 2800 5900 50  0001 C CNN
-	1    2800 5900
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 619305C1
-P 2800 6650
-F 0 "R2" V 2593 6650 50  0000 C CNN
-F 1 "10k" V 2684 6650 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 2730 6650 50  0001 C CNN
-F 3 "~" H 2800 6650 50  0001 C CNN
-	1    2800 6650
-	0    1    1    0   
-$EndComp
 Text Label 2050 5900 0    50   ~ 0
 DTR
 Text Label 2050 6650 0    50   ~ 0
 RTS
 Wire Wire Line
 	2050 6650 2450 6650
-Wire Wire Line
-	2950 6650 3750 6650
 Text Label 4950 5500 0    50   ~ 0
 EN
 Text Label 4650 6300 0    50   ~ 0
 IO0
 Wire Wire Line
-	4050 5700 4050 5500
-Wire Wire Line
-	4050 6450 4050 6300
-Wire Wire Line
 	4050 6300 4650 6300
-Connection ~ 2450 6650
-Wire Wire Line
-	2450 6650 2650 6650
 Wire Wire Line
 	3500 7000 4050 7000
 Wire Wire Line
 	4050 7000 4050 6850
 Wire Wire Line
 	2050 5900 2550 5900
-Wire Wire Line
-	2950 5900 3750 5900
 Wire Wire Line
 	4050 6100 4050 6200
 Wire Wire Line
@@ -379,9 +316,6 @@ Wire Wire Line
 	2550 6300 3500 6300
 Wire Wire Line
 	3500 6300 3500 7000
-Connection ~ 2550 5900
-Wire Wire Line
-	2550 5900 2650 5900
 NoConn ~ 8100 3200
 NoConn ~ 8100 3300
 NoConn ~ 8100 3400
@@ -423,10 +357,10 @@ F 3 "~" H 4900 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R3
+L Device:R R1
 U 1 1 619B511C
 P 4550 3650
-F 0 "R3" H 4480 3604 50  0000 R CNN
+F 0 "R1" H 4480 3604 50  0000 R CNN
 F 1 "2k" H 4480 3695 50  0000 R CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 4480 3650 50  0001 C CNN
 F 3 "~" H 4550 3650 50  0001 C CNN
@@ -515,7 +449,7 @@ L Device:C C3
 U 1 1 6193EF95
 P 4650 5700
 F 0 "C3" H 4765 5746 50  0000 L CNN
-F 1 "22uF" H 4765 5655 50  0000 L CNN
+F 1 "100nF" H 4765 5655 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 4688 5550 50  0001 C CNN
 F 3 "~" H 4650 5700 50  0001 C CNN
 	1    4650 5700
@@ -532,5 +466,107 @@ Wire Wire Line
 Wire Wire Line
 	4650 5500 4950 5500
 Connection ~ 4650 5500
-NoConn ~ 9350 3700
+$Comp
+L Transistor_BJT:MUN5211DW1 Q1
+U 1 1 619D3F94
+P 4000 5900
+F 0 "Q1" H 4141 5946 50  0000 L CNN
+F 1 "MUN5214DW1" H 4141 5855 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4005 5460 50  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/dtc114yd-d.pdf" H 4000 5900 50  0001 C CNN
+	1    4000 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:MUN5211DW1 Q1
+U 2 1 619D889E
+P 4000 6650
+F 0 "Q1" H 4141 6696 50  0000 L CNN
+F 1 "MUN5214DW1" H 4141 6605 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 4005 6210 50  0001 C CNN
+F 3 "https://www.onsemi.com/pdf/datasheet/dtc114yd-d.pdf" H 4000 6650 50  0001 C CNN
+	2    4000 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 6300 4050 6450
+Wire Wire Line
+	2450 6650 3650 6650
+Connection ~ 2450 6650
+Wire Wire Line
+	4050 5500 4050 5700
+Wire Wire Line
+	2550 5900 3650 5900
+Connection ~ 2550 5900
+Text Label 9350 3700 0    50   ~ 0
+GND
+Text Label 7050 1500 0    50   ~ 0
+GND
+Text Label 7050 1600 0    50   ~ 0
+GND
+Text Label 7050 1700 0    50   ~ 0
+GND
+Text Label 7050 1800 0    50   ~ 0
+GND
+Text Label 7050 1900 0    50   ~ 0
+GND
+Text Label 7050 2000 0    50   ~ 0
+GND
+Text Label 6350 1500 0    50   ~ 0
+VDD
+Text Label 6350 1600 0    50   ~ 0
+VDD
+Text Label 6350 1700 0    50   ~ 0
+VDD
+Text Label 6350 1800 0    50   ~ 0
+VDD
+Text Label 6350 1900 0    50   ~ 0
+VDD
+Text Label 6350 2000 0    50   ~ 0
+VDD
+Wire Wire Line
+	6350 1500 6550 1500
+Wire Wire Line
+	6350 1600 6550 1600
+Wire Wire Line
+	6550 1700 6350 1700
+Wire Wire Line
+	6350 1800 6550 1800
+Wire Wire Line
+	6350 1900 6550 1900
+Wire Wire Line
+	6350 2000 6550 2000
+Text Label 9150 1550 0    50   ~ 0
++5v-out
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J5
+U 1 1 61A47DA6
+P 6750 1700
+F 0 "J5" H 6800 2117 50  0000 C CNN
+F 1 "+/- rail" H 6800 2026 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 6750 1700 50  0001 C CNN
+F 3 "~" H 6750 1700 50  0001 C CNN
+	1    6750 1700
+	1    0    0    -1  
+$EndComp
+Text Label 9150 1650 0    50   ~ 0
++5v-in
+$Comp
+L Connector_Generic:Conn_01x03 J6
+U 1 1 61A66E61
+P 8950 1550
+F 0 "J6" H 8868 1225 50  0000 C CNN
+F 1 "Conn_01x03" H 8868 1316 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8950 1550 50  0001 C CNN
+F 3 "~" H 8950 1550 50  0001 C CNN
+	1    8950 1550
+	-1   0    0    1   
+$EndComp
+NoConn ~ 9150 1450
+Wire Wire Line
+	1250 3050 1750 3050
+Wire Wire Line
+	9250 3800 9550 3800
+Wire Wire Line
+	9250 3900 9550 3900
 $EndSCHEMATC
