@@ -180,13 +180,13 @@ SVN
 $Comp
 L Connector:Conn_01x06_Female J5
 U 1 1 61A3BB44
-P 8450 1900
-F 0 "J5" H 8300 2200 50  0000 L CNN
-F 1 "esp32-sol shield" H 8050 1450 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 8450 1900 50  0001 C CNN
-F 3 "~" H 8450 1900 50  0001 C CNN
-	1    8450 1900
-	-1   0    0    1   
+P 8600 1800
+F 0 "J5" H 8450 2100 50  0000 L CNN
+F 1 "esp32-sol shield" H 8200 1350 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 8600 1800 50  0001 C CNN
+F 3 "~" H 8600 1800 50  0001 C CNN
+	1    8600 1800
+	1    0    0    -1  
 $EndComp
 $Comp
 L Connector:Conn_01x04_Male J4
@@ -214,24 +214,24 @@ Text Label 6850 1800 0    50   ~ 0
 GND
 Text Label 7800 1800 0    50   ~ 0
 GND
-Text Label 9350 2300 0    50   ~ 0
+Text Label 9350 1450 2    50   ~ 0
 GND
-Text Label 8650 1600 0    50   ~ 0
+Text Label 8400 2100 2    50   ~ 0
 GND
 Text Label 6850 1700 0    50   ~ 0
 VDD
 Text Label 7800 1700 0    50   ~ 0
 VDD
-Text Label 9350 1600 0    50   ~ 0
+Text Label 9350 2150 2    50   ~ 0
 VDD
-Text Label 9350 1900 0    50   ~ 0
+Text Label 9350 1850 2    50   ~ 0
 IO18
-Text Label 9350 1800 0    50   ~ 0
+Text Label 9350 1950 2    50   ~ 0
 IO26
-NoConn ~ 8650 2000
-Text Label 8650 1800 0    50   ~ 0
+NoConn ~ 8400 1800
+Text Label 8400 1900 2    50   ~ 0
 IO35
-Text Label 8650 1700 0    50   ~ 0
+Text Label 8400 2000 2    50   ~ 0
 EN
 Text Label 7800 1900 0    50   ~ 0
 IO17
@@ -240,13 +240,13 @@ IO16
 $Comp
 L Connector:Conn_01x08_Female J6
 U 1 1 61A3C581
-P 9150 2000
-F 0 "J6" H 9000 2400 50  0000 L CNN
-F 1 "LoRa shield" H 8850 1450 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 9150 2000 50  0001 C CNN
-F 3 "~" H 9150 2000 50  0001 C CNN
-	1    9150 2000
-	-1   0    0    1   
+P 9550 1750
+F 0 "J6" H 9400 2150 50  0000 L CNN
+F 1 "LoRa shield" H 9250 1200 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical" H 9550 1750 50  0001 C CNN
+F 3 "~" H 9550 1750 50  0001 C CNN
+	1    9550 1750
+	1    0    0    -1  
 $EndComp
 NoConn ~ 7600 3250
 NoConn ~ 8450 3250
@@ -259,18 +259,17 @@ NoConn ~ 8450 4050
 NoConn ~ 9700 3350
 NoConn ~ 9050 3850
 NoConn ~ 9050 3950
-NoConn ~ 9350 1700
-Text Label 9350 2000 0    50   ~ 0
+NoConn ~ 9350 2050
+Text Label 9350 1750 2    50   ~ 0
 IO13
-Text Label 9350 2100 0    50   ~ 0
+Text Label 9350 1650 2    50   ~ 0
 IO15
-Text Label 9350 2200 0    50   ~ 0
+Text Label 9350 1550 2    50   ~ 0
 IO14
-Text Label 8650 1900 0    50   ~ 0
+Text Label 8400 1700 2    50   ~ 0
 IO34
-Text Label 8650 2100 0    50   ~ 0
+Text Label 8400 1600 2    50   ~ 0
 VDD-IN
-NoConn ~ 8500 800 
 $Comp
 L Device:R R1
 U 1 1 61A90BE3
