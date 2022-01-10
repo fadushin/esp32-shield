@@ -42,7 +42,7 @@ This board includes:
 * Two sets of 2x9 2.54mm junctions, which can be used for pins or headers (at your discretion).  These junctions are PIN compatible with the ESP32 adapter board mentioned above.
 * Two sets of 1x8 2.54mm junctions, for integration with the the [Adafruit CP2104 Friend](https://www.adafruit.com/product/3309);
 * AMS1117 voltage regulator and capacitors, for 3.3v power supply to the ESP32;
-* A pair of SS8050-G transistors and resistors to provide auto-boot and flash;
+* A dual NPN bias transistor resistor integrated circuit, for auto-boot and auto-flash;
 * A capacitor on EN to delay restart on the UART control signal;
 * A power status LED connected to +5v.
 
